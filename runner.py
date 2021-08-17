@@ -7,7 +7,7 @@ import pytest
 now = time.strftime("%Y%m%d%H%M%S", time.localtime())  # 获取实时时间
 file_name = f'report_{now}'
 
-pytest.main(['-s', 'test_case/test_login.py', '--alluredir', './temp'])
+pytest.main(['-vs', 'test_case/test_login.py', '--alluredir', './temp'])
 os.system(f'allure generate ./temp -o ./report/{file_name} --clean')
 f = os.getcwd()
 path = f + '\\temp'
